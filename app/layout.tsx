@@ -5,17 +5,18 @@ const heroImageUrl = "https://images.unsplash.com/photo-1431324155629-1a6deb1dec
 
 export const metadata: Metadata = {
   title: {
-    default: "FIFA World Cup 2026 Group D Qualifiers Table, Standings and Results",
+    default: "FIFA World Cup 2026 Group D Table: Standings, Results and Points",
     template: "%s | World Cup Group D Standings",
   },
   description:
-    "Updated FIFA World Cup 2026 Group D table with USA, Australia, Paraguay, Turkiye standings, results, points, goal difference, qualification notes, and sources.",
+    "Updated FIFA World Cup 2026 Group D table with USA, Australia, Paraguay, Turkiye standings, results, points, goal difference, qualification notes, and official source links.",
   applicationName: "World Cup Group D Standings",
   authors: [{ name: "World Cup Standings Desk" }],
   category: "sports",
   keywords: [
-    "fifa world cup 2026 group d qualifiers table",
+    "fifa world cup 2026 group d table",
     "world cup group d standings",
+    "world cup 2026 group d results",
     "fifa standings 2026",
     "world cup bracket",
     "fifa world cup standings",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FIFA World Cup 2026 Group D Qualifiers Table",
+    title: "FIFA World Cup 2026 Group D Table",
     description: "Updated Group D table, results, points, and goal difference.",
     images: [heroImageUrl],
   },

@@ -127,7 +127,6 @@ textarea {
 .primaryAction,
 .secondaryAction,
 .quickNav a,
-.keywordCloud a,
 .sourceList a {
   display: inline-flex;
   align-items: center;
@@ -176,8 +175,6 @@ textarea {
 .quickNav a:focus-visible,
 .primaryAction:focus-visible,
 .secondaryAction:focus-visible,
-.keywordCloud a:hover,
-.keywordCloud a:focus-visible,
 .sourceList a:hover,
 .sourceList a:focus-visible {
   border-color: var(--blue);
@@ -421,12 +418,17 @@ tr:last-child td {
   margin-top: 18px;
 }
 
-.keywordCloud a {
+.keywordCloud span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
   border: 1px solid var(--line);
+  border-radius: 8px;
   background: #fbfcfe;
   padding: 0 12px;
   color: var(--muted);
   font-size: 14px;
+  font-weight: 800;
 }
 
 details {
@@ -456,6 +458,12 @@ details p {
   border: 1px solid var(--line);
   padding: 0 12px;
   color: var(--muted);
+}
+
+.trustNotice {
+  border-left: 4px solid var(--blue);
+  background: #f3f8ff;
+  padding: 12px 14px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -51,7 +51,7 @@ const groupTable = [
     goalDifference: "-2",
     points: 4,
     form: ["L", "W", "D"],
-    status: "Third-place qualification watch",
+    status: "Third place in Group D",
   },
   {
     rank: 4,
@@ -100,8 +100,9 @@ const sources = [
 ];
 
 const relatedKeywords = [
-  "fifa world cup 2026 group d qualifiers table",
+  "fifa world cup 2026 group d table",
   "world cup group d standings",
+  "world cup 2026 group d results",
   "fifa standings 2026",
   "world cup bracket",
   "world cup group standings",
@@ -114,7 +115,7 @@ export default function Home() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "FIFA World Cup 2026 Group D Qualifiers Table, Standings and Results",
+    headline: "FIFA World Cup 2026 Group D Table: Standings, Results and Points",
     description:
       "Updated Group D table for the 2026 FIFA World Cup with points, goal difference, fixtures, qualification picture, and analysis.",
     datePublished: "2026-06-26",
@@ -207,10 +208,10 @@ export default function Home() {
             <Trophy size={18} />
             FIFA World Cup 2026 Group D
           </div>
-          <h1 id="page-title">FIFA World Cup 2026 Group D Qualifiers Table, Standings and Results</h1>
+          <h1 id="page-title">FIFA World Cup 2026 Group D Table: Standings, Results and Points</h1>
           <p>
-            The live search trend is clear: fans want the Group D table fast. Here is the current standings snapshot,
-            match-by-match story, and what the results mean for the knockout bracket.
+            A clear reference page for Group D standings, match results, points, goal difference, and what the table
+            means for the knockout bracket.
           </p>
           <div className="heroActions">
             <a href="#table" className="primaryAction">
@@ -373,13 +374,13 @@ export default function Home() {
         </section>
 
         <section className="contentSection">
-          <span className="sectionKicker">Search Intent</span>
-          <h2>Related Searches Fans Are Using</h2>
+          <span className="sectionKicker">Reference Topics</span>
+          <h2>Related Table Topics</h2>
           <div className="keywordCloud">
             {relatedKeywords.map((keyword) => (
-              <a key={keyword} href={`https://www.google.com/search?q=${encodeURIComponent(keyword)}`} target="_blank" rel="noreferrer">
+              <span key={keyword}>
                 {keyword}
-              </a>
+              </span>
             ))}
           </div>
         </section>
@@ -407,6 +408,10 @@ export default function Home() {
         <section className="contentSection" id="sources">
           <span className="sectionKicker">External Links</span>
           <h2>Sources and Further Reading</h2>
+          <p className="trustNotice">
+            This independent standings article is for football reference only. It does not provide video broadcasts,
+            broadcast access, or ticketing services, and it is not affiliated with FIFA.
+          </p>
           <div className="sourceList">
             {sources.map((source) => (
               <a href={source.href} target="_blank" rel="noreferrer" key={source.href}>
