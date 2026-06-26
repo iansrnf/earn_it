@@ -2,6 +2,7 @@
 import { CalendarDays, ChevronRight, ExternalLink, Goal, ShieldCheck, Sparkles, Trophy } from "lucide-react";
 
 const updatedAt = "June 26, 2026";
+const heroImageUrl = "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1600&q=80";
 
 const groupTable = [
   {
@@ -122,7 +123,7 @@ export default function Home() {
       "@type": "Organization",
       name: "World Cup Standings Desk",
     },
-    image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1600&q=80",
+    image: heroImageUrl,
   };
 
   const faqJsonLd = {
@@ -156,16 +157,49 @@ export default function Home() {
     ],
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "World Cup 2026",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Group D Standings",
+      },
+    ],
+  };
+
+  const tableJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "FIFA World Cup 2026 Group D Table",
+    description: "Group D standings table with teams, points, goals, goal difference, and qualification status.",
+    temporalCoverage: "2026",
+    variableMeasured: ["points", "played", "won", "drawn", "lost", "goalsFor", "goalsAgainst", "goalDifference"],
+  };
+
   return (
     <main className="siteShell">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tableJsonLd) }} />
 
       <section className="hero" aria-labelledby="page-title">
         <img
           className="heroImage"
-          src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1600&q=80"
+          src={heroImageUrl}
+          width="1600"
+          height="900"
           alt="Floodlit football stadium with a green pitch"
+          decoding="async"
+          fetchPriority="high"
+          referrerPolicy="no-referrer"
         />
         <div className="heroOverlay" />
         <div className="heroContent">
@@ -210,7 +244,15 @@ export default function Home() {
             </p>
           </div>
           <div className="winnerCard">
-            <img src={champion.flag} alt="United States flag" />
+            <img
+              src={champion.flag}
+              width="160"
+              height="120"
+              alt="United States flag"
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
+            />
             <span>Group Winner</span>
             <strong>{champion.team}</strong>
             <small>{champion.points} points, {champion.goalDifference} goal difference</small>
@@ -220,6 +262,7 @@ export default function Home() {
         <section className="standingsWrap" aria-label="World Cup Group D standings">
           <div className="tableScroll">
             <table className="standingsTable">
+              <caption>FIFA World Cup 2026 Group D standings after three matches</caption>
               <thead>
                 <tr>
                   <th>Pos</th>
@@ -243,7 +286,15 @@ export default function Home() {
                     </td>
                     <td>
                       <div className="teamCell">
-                        <img src={team.flag} alt={`${team.team} flag`} />
+                        <img
+                          src={team.flag}
+                          width="160"
+                          height="120"
+                          alt={`${team.team} flag`}
+                          loading="lazy"
+                          decoding="async"
+                          referrerPolicy="no-referrer"
+                        />
                         <div>
                           <strong>{team.team}</strong>
                           <span>{team.status}</span>
