@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Earnapp Devices",
   description: "Earnapp device list, usage forecast, and delete tool",
   other: {
-    monetag: "2163edf09b4d693bc5f89cfc6afa51f8",
+    monetag: "49552a352ef9432b970e0059ce002458",
   },
 };
 
