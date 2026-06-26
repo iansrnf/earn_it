@@ -1,29 +1,33 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const heroImageUrl = "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1600&q=80";
+const heroImageUrl = "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=1600&q=80";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://iansr.online"),
   title: {
-    default: "FIFA World Cup 2026 Group D Table: Standings, Results and Points",
-    template: "%s | World Cup Group D Standings",
+    default: "July 4th Atlantic Weather Outlook: Tropics, Southeast Rain and Holiday Forecast",
+    template: "%s | July 4 Atlantic Weather",
   },
   description:
-    "Updated FIFA World Cup 2026 Group D table with USA, Australia, Paraguay, Turkiye standings, results, points, goal difference, qualification notes, and official source links.",
-  applicationName: "World Cup Group D Standings",
-  authors: [{ name: "World Cup Standings Desk" }],
-  category: "sports",
+    "Updated July 4th Atlantic weather outlook with the latest National Hurricane Center tropical update, Southeast rain risk, beach impacts, and official forecast links.",
+  alternates: {
+    canonical: "/",
+  },
+  applicationName: "July 4 Atlantic Weather Outlook",
+  authors: [{ name: "Atlantic Weather Desk" }],
+  category: "weather",
   keywords: [
-    "fifa world cup 2026 group d table",
-    "world cup group d standings",
-    "world cup 2026 group d results",
-    "fifa standings 2026",
-    "world cup bracket",
-    "fifa world cup standings",
+    "july 4th atlantic weather",
+    "july 4 atlantic weather",
+    "july 4 tropical weather outlook",
+    "atlantic weather july 4",
+    "southeast july 4 weather",
+    "atlantic hurricane outlook july 4",
   ],
   openGraph: {
-    title: "FIFA World Cup 2026 Group D Table and Standings",
-    description: "Group D standings, results, qualification picture, and analysis for the 2026 FIFA World Cup.",
+    title: "July 4th Atlantic Weather Outlook",
+    description: "Latest Atlantic tropics status, Southeast rain risk, and holiday beach-weather planning notes.",
     type: "article",
     locale: "en_US",
     images: [
@@ -31,14 +35,14 @@ export const metadata: Metadata = {
         url: heroImageUrl,
         width: 1600,
         height: 900,
-        alt: "Floodlit football stadium with a green pitch",
+        alt: "Storm clouds over the ocean",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FIFA World Cup 2026 Group D Table",
-    description: "Updated Group D table, results, points, and goal difference.",
+    title: "July 4th Atlantic Weather Outlook",
+    description: "Updated Atlantic tropical outlook, Southeast rain risk, and holiday forecast notes.",
     images: [heroImageUrl],
   },
   robots: {
@@ -72,7 +76,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="preconnect" href="https://flagcdn.com" />
+        <link rel="preconnect" href="https://www.nhc.noaa.gov" />
         <link rel="preconnect" href="https://quge5.com" />
         <link rel="dns-prefetch" href="https://3nbf4.com" />
         <link rel="preload" as="image" href={heroImageUrl} fetchPriority="high" />

@@ -1,128 +1,79 @@
 /* eslint-disable @next/next/no-img-element */
-import { CalendarDays, ChevronRight, ExternalLink, Goal, ShieldCheck, Sparkles, Trophy } from "lucide-react";
+import { AlertTriangle, CalendarDays, ChevronRight, CloudRain, ExternalLink, Radio, ShieldCheck, Waves } from "lucide-react";
 
 const updatedAt = "June 26, 2026";
-const heroImageUrl = "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1600&q=80";
+const heroImageUrl = "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=1600&q=80";
+const nhcOutlookImageUrl = "https://www.nhc.noaa.gov/xgtwo/two_atl_7d0.png";
 
-const groupTable = [
+const keyPoints = [
   {
-    rank: 1,
-    team: "United States",
-    short: "USA",
-    flag: "https://flagcdn.com/w160/us.png",
-    played: 3,
-    won: 2,
-    drawn: 0,
-    lost: 1,
-    goalsFor: 8,
-    goalsAgainst: 4,
-    goalDifference: "+4",
-    points: 6,
-    form: ["W", "W", "L"],
-    status: "Qualified for the round of 32",
+    title: "No Named Storm Signal Yet",
+    text: "The National Hurricane Center's current Atlantic outlook says tropical cyclone formation is not expected during the next seven days.",
+    icon: ShieldCheck,
   },
   {
-    rank: 2,
-    team: "Australia",
-    short: "AUS",
-    flag: "https://flagcdn.com/w160/au.png",
-    played: 3,
-    won: 1,
-    drawn: 1,
-    lost: 1,
-    goalsFor: 2,
-    goalsAgainst: 2,
-    goalDifference: "0",
-    points: 4,
-    form: ["W", "L", "D"],
-    status: "Qualified for the round of 32",
+    title: "Southeast Rain Risk",
+    text: "Holiday-week travel along the Southeast and Atlantic coast should still watch for scattered storms, rough surf, and locally heavy downpours.",
+    icon: CloudRain,
   },
   {
-    rank: 3,
-    team: "Paraguay",
-    short: "PAR",
-    flag: "https://flagcdn.com/w160/py.png",
-    played: 3,
-    won: 1,
-    drawn: 1,
-    lost: 1,
-    goalsFor: 2,
-    goalsAgainst: 4,
-    goalDifference: "-2",
-    points: 4,
-    form: ["L", "W", "D"],
-    status: "Third place in Group D",
-  },
-  {
-    rank: 4,
-    team: "Turkiye",
-    short: "TUR",
-    flag: "https://flagcdn.com/w160/tr.png",
-    played: 3,
-    won: 1,
-    drawn: 0,
-    lost: 2,
-    goalsFor: 3,
-    goalsAgainst: 5,
-    goalDifference: "-2",
-    points: 3,
-    form: ["L", "L", "W"],
-    status: "Eliminated from Group D",
+    title: "Forecast Can Change Fast",
+    text: "July 4 sits near the edge of the official seven-day tropical outlook window, so the most useful plan is to check fresh updates daily.",
+    icon: AlertTriangle,
   },
 ];
 
-const fixtures = [
-  "United States 4-1 Paraguay",
-  "Australia 2-0 Turkiye",
-  "United States 2-0 Australia",
-  "Paraguay 1-0 Turkiye",
-  "Turkiye 3-2 United States",
-  "Paraguay 0-0 Australia",
+const travelImpacts = [
+  "Beach plans: watch for rip-current statements and surf advisories before swimming.",
+  "Road trips: afternoon storms can slow I-95 and coastal routes from Florida through the Carolinas.",
+  "Boating: check local marine forecasts for wind shifts, lightning, and seas before leaving port.",
+  "Fireworks: evening storms can delay outdoor events even when the tropics stay quiet.",
 ];
 
-const sources = [
+const officialSources = [
   {
-    label: "FIFA World Cup 26 official hub",
-    href: "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+    label: "National Hurricane Center Atlantic Outlook",
+    href: "https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=7",
   },
   {
-    label: "FIFA match centre",
-    href: "https://www.fifa.com/en/match-centre",
+    label: "NHC Tropical Weather Discussion",
+    href: "https://www.nhc.noaa.gov/text/MIATWDAT.shtml",
   },
   {
-    label: "Sky Sports World Cup tables",
-    href: "https://www.skysports.com/world-cup-table",
+    label: "NOAA Weather Prediction Center",
+    href: "https://www.wpc.ncep.noaa.gov/",
   },
   {
-    label: "Yahoo Sports World Cup standings",
-    href: "https://sports.yahoo.com/soccer/world-cup/standings/",
+    label: "National Weather Service Forecast Search",
+    href: "https://www.weather.gov/",
+  },
+  {
+    label: "FOX Weather Tropical Update",
+    href: "https://www.foxweather.com/",
   },
 ];
 
-const relatedKeywords = [
-  "fifa world cup 2026 group d table",
-  "world cup group d standings",
-  "world cup 2026 group d results",
-  "fifa standings 2026",
-  "world cup bracket",
-  "world cup group standings",
-  "fifa world cup standings",
+const relatedTopics = [
+  "july 4th atlantic weather",
+  "atlantic tropics july 4",
+  "southeast holiday rain forecast",
+  "atlantic hurricane outlook",
+  "july 4 beach weather",
+  "national hurricane center update",
 ];
 
 export default function Home() {
-  const champion = groupTable[0];
-
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "FIFA World Cup 2026 Group D Table: Standings, Results and Points",
+    "@type": "NewsArticle",
+    headline: "July 4th Atlantic Weather Outlook: Tropics, Southeast Rain and Holiday Forecast",
     description:
-      "Updated Group D table for the 2026 FIFA World Cup with points, goal difference, fixtures, qualification picture, and analysis.",
+      "Current July 4th Atlantic weather outlook covering the National Hurricane Center tropical update, Southeast rain risk, beach impacts, and official forecast sources.",
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
-      name: "World Cup Standings Desk",
+      name: "Atlantic Weather Desk",
     },
     image: heroImageUrl,
   };
@@ -133,26 +84,26 @@ export default function Home() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Who leads FIFA World Cup 2026 Group D?",
+        name: "Is there a tropical storm expected in the Atlantic for July 4th?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "The United States leads Group D with six points after three matches.",
+          text: "As of June 26, 2026, the National Hurricane Center says tropical cyclone formation is not expected in the Atlantic during the next seven days. July 4 is near the edge of that window, so travelers should keep checking official updates.",
         },
       },
       {
         "@type": "Question",
-        name: "Which teams qualified from World Cup 2026 Group D?",
+        name: "Will the Southeast have rain around July 4th?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "The United States and Australia finished in the top two qualification positions in Group D.",
+          text: "The Southeast and Atlantic coast often see scattered afternoon storms in early July. Local forecasts from the National Weather Service are the best source for city-specific timing.",
         },
       },
       {
         "@type": "Question",
-        name: "Why is Australia above Paraguay in Group D?",
+        name: "Where should I check for official July 4 Atlantic weather updates?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Australia and Paraguay both finished on four points, but Australia had the stronger overall goal difference.",
+          text: "Use the National Hurricane Center for tropical outlooks and the National Weather Service for local forecasts, watches, warnings, marine forecasts, and beach hazards.",
         },
       },
     ],
@@ -165,23 +116,14 @@ export default function Home() {
       {
         "@type": "ListItem",
         position: 1,
-        name: "World Cup 2026",
+        name: "Weather",
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Group D Standings",
+        name: "July 4 Atlantic Weather",
       },
     ],
-  };
-
-  const tableJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    name: "FIFA World Cup 2026 Group D Table",
-    description: "Group D standings table with teams, points, goals, goal difference, and qualification status.",
-    temporalCoverage: "2026",
-    variableMeasured: ["points", "played", "won", "drawn", "lost", "goalsFor", "goalsAgainst", "goalDifference"],
   };
 
   return (
@@ -189,7 +131,6 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tableJsonLd) }} />
 
       <section className="hero" aria-labelledby="page-title">
         <img
@@ -197,7 +138,7 @@ export default function Home() {
           src={heroImageUrl}
           width="1600"
           height="900"
-          alt="Floodlit football stadium with a green pitch"
+          alt="Storm clouds over the ocean"
           decoding="async"
           fetchPriority="high"
           referrerPolicy="no-referrer"
@@ -205,28 +146,28 @@ export default function Home() {
         <div className="heroOverlay" />
         <div className="heroContent">
           <div className="eyebrow">
-            <Trophy size={18} />
-            FIFA World Cup 2026 Group D
+            <Radio size={18} />
+            Atlantic Weather Outlook
           </div>
-          <h1 id="page-title">FIFA World Cup 2026 Group D Table: Standings, Results and Points</h1>
+          <h1 id="page-title">July 4th Atlantic Weather Outlook: Tropics, Southeast Rain and Holiday Forecast</h1>
           <p>
-            A clear reference page for Group D standings, match results, points, goal difference, and what the table
-            means for the knockout bracket.
+            A practical holiday-weather guide for the Atlantic basin, Southeast coast, beach trips, boating plans, and
+            Independence Day events.
           </p>
           <div className="heroActions">
-            <a href="#table" className="primaryAction">
-              View Table
+            <a href="#outlook" className="primaryAction">
+              Read Outlook
               <ChevronRight size={18} />
             </a>
-            <a href="#results" className="secondaryAction">
-              Match Results
+            <a href="#sources" className="secondaryAction">
+              Official Sources
             </a>
           </div>
         </div>
       </section>
 
       <nav className="quickNav" aria-label="Article sections">
-        {["Table", "Results", "Analysis", "FAQ", "Sources"].map((item) => (
+        {["Outlook", "Tropics", "Impacts", "FAQ", "Sources"].map((item) => (
           <a key={item} href={`#${item.toLowerCase()}`}>
             {item}
           </a>
@@ -234,153 +175,96 @@ export default function Home() {
       </nav>
 
       <article className="articleGrid">
-        <section className="leadPanel" id="table">
+        <section className="leadPanel" id="outlook">
           <div>
             <span className="sectionKicker">Updated {updatedAt}</span>
-            <h2>Group D Standings Table</h2>
+            <h2>What the July 4th Atlantic Weather Signal Shows Now</h2>
             <p>
-              The United States won Group D on six points. Australia took second place on four points, edging Paraguay
-              by goal difference after their final-day draw. Turkiye finished fourth despite beating the group winner in
-              a high-scoring finale.
+              The cleanest current takeaway is cautious but not alarming: the National Hurricane Center does not expect
+              tropical cyclone formation in the Atlantic during the next seven days. That keeps the near-term tropical
+              signal low, but July 4 holiday planning should still account for the Southeast&apos;s normal summer pattern
+              of pop-up thunderstorms, humid air, beach hazards, and fast-changing coastal conditions.
             </p>
           </div>
           <div className="winnerCard">
+            <Waves size={42} />
+            <span>Current Atlantic Tropics</span>
+            <strong>Quiet Near Term</strong>
+            <small>NHC: no tropical cyclone formation expected within seven days</small>
+          </div>
+        </section>
+
+        <section className="standingsWrap" id="tropics" aria-label="National Hurricane Center Atlantic outlook map">
+          <div className="weatherMap">
+            <div>
+              <span className="sectionKicker">Tropical Outlook</span>
+              <h2>Latest NHC Atlantic Map</h2>
+              <p>
+                This external map is loaded directly from the National Hurricane Center. It updates independently when
+                NHC refreshes the seven-day Atlantic tropical outlook.
+              </p>
+            </div>
             <img
-              src={champion.flag}
-              width="160"
-              height="120"
-              alt="United States flag"
+              src={nhcOutlookImageUrl}
+              width="900"
+              height="675"
+              alt="National Hurricane Center seven-day Atlantic tropical weather outlook map"
               loading="lazy"
               decoding="async"
               referrerPolicy="no-referrer"
             />
-            <span>Group Winner</span>
-            <strong>{champion.team}</strong>
-            <small>{champion.points} points, {champion.goalDifference} goal difference</small>
           </div>
         </section>
 
-        <section className="standingsWrap" aria-label="World Cup Group D standings">
-          <div className="tableScroll">
-            <table className="standingsTable">
-              <caption>FIFA World Cup 2026 Group D standings after three matches</caption>
-              <thead>
-                <tr>
-                  <th>Pos</th>
-                  <th>Team</th>
-                  <th>P</th>
-                  <th>W</th>
-                  <th>D</th>
-                  <th>L</th>
-                  <th>GF</th>
-                  <th>GA</th>
-                  <th>GD</th>
-                  <th>Pts</th>
-                  <th>Form</th>
-                </tr>
-              </thead>
-              <tbody>
-                {groupTable.map((team) => (
-                  <tr key={team.short}>
-                    <td>
-                      <span className={`rankBadge ${team.rank < 3 ? "qualified" : ""}`}>{team.rank}</span>
-                    </td>
-                    <td>
-                      <div className="teamCell">
-                        <img
-                          src={team.flag}
-                          width="160"
-                          height="120"
-                          alt={`${team.team} flag`}
-                          loading="lazy"
-                          decoding="async"
-                          referrerPolicy="no-referrer"
-                        />
-                        <div>
-                          <strong>{team.team}</strong>
-                          <span>{team.status}</span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>{team.played}</td>
-                    <td>{team.won}</td>
-                    <td>{team.drawn}</td>
-                    <td>{team.lost}</td>
-                    <td>{team.goalsFor}</td>
-                    <td>{team.goalsAgainst}</td>
-                    <td>{team.goalDifference}</td>
-                    <td className="pointsCell">{team.points}</td>
-                    <td>
-                      <div className="formDots" aria-label={`${team.team} form ${team.form.join(", ")}`}>
-                        {team.form.map((result, index) => (
-                          <span className={result.toLowerCase()} key={`${team.short}-${result}-${index}`}>
-                            {result}
-                          </span>
-                        ))}
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        <section className="insightGrid" aria-label="July 4 Atlantic weather key points">
+          {keyPoints.map((point) => {
+            const Icon = point.icon;
+
+            return (
+              <article key={point.title}>
+                <Icon size={24} />
+                <h3>{point.title}</h3>
+                <p>{point.text}</p>
+              </article>
+            );
+          })}
         </section>
 
-        <section className="insightGrid" aria-label="Group D key insights">
-          <article>
-            <ShieldCheck size={24} />
-            <h3>Top Two Are Clear</h3>
-            <p>USA and Australia occupy the automatic qualification places from Group D.</p>
-          </article>
-          <article>
-            <Goal size={24} />
-            <h3>Goal Difference Decided Second</h3>
-            <p>Australia and Paraguay both reached four points, but Australia stayed above on goal difference.</p>
-          </article>
-          <article>
-            <Sparkles size={24} />
-            <h3>Turkiye Changed the Ending</h3>
-            <p>Turkiye beat the United States 3-2, but earlier defeats left them short of the knockout picture.</p>
-          </article>
-        </section>
-
-        <section className="contentSection" id="results">
-          <span className="sectionKicker">Scores</span>
-          <h2>Group D Results</h2>
+        <section className="contentSection" id="impacts">
+          <span className="sectionKicker">Holiday Impacts</span>
+          <h2>What Travelers Should Watch Before July 4</h2>
           <div className="resultList">
-            {fixtures.map((fixture) => (
-              <div className="resultItem" key={fixture}>
+            {travelImpacts.map((impact) => (
+              <div className="resultItem" key={impact}>
                 <CalendarDays size={18} />
-                <strong>{fixture}</strong>
+                <strong>{impact}</strong>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="contentSection" id="analysis">
-          <span className="sectionKicker">Analysis</span>
-          <h2>What the Table Means</h2>
+        <section className="contentSection">
+          <span className="sectionKicker">Forecast Context</span>
+          <h2>Why the Forecast Can Still Change</h2>
           <p>
-            Group D became a clean example of why World Cup tables are more than points alone. The United States had the
-            most explosive attack in the group with eight goals, giving them enough margin to survive a final-match
-            defeat. Australia did not score heavily, but the 2-0 win over Turkiye and the 0-0 draw with Paraguay were
-            enough to protect second place.
+            Early July is part of Atlantic hurricane season, but every tropical setup depends on short-term details:
+            upper-level winds, Saharan dust, sea-surface temperatures, and whether a weak disturbance can organize near
+            the coast or over open water. A quiet seven-day outlook is useful, but it should not be treated as a full
+            holiday-week guarantee for every beach, port, or outdoor event.
           </p>
           <p>
-            Paraguay stayed alive through defensive control after the opening loss, yet the heavy defeat to the United
-            States damaged their goal difference. Turkiye had the group&apos;s most dramatic final result, but three points
-            from three matches usually leaves too much scoreboard math to survive.
+            For practical planning, separate the tropical question from the day-to-day weather question. Even without a
+            named storm, coastal thunderstorms can create lightning delays, heavy rain, rip currents, and rough boating
+            windows. Local National Weather Service forecasts become more important as July 4 gets closer.
           </p>
         </section>
 
         <section className="contentSection">
           <span className="sectionKicker">Reference Topics</span>
-          <h2>Related Table Topics</h2>
+          <h2>Related Weather Topics</h2>
           <div className="keywordCloud">
-            {relatedKeywords.map((keyword) => (
-              <span key={keyword}>
-                {keyword}
-              </span>
+            {relatedTopics.map((topic) => (
+              <span key={topic}>{topic}</span>
             ))}
           </div>
         </section>
@@ -389,31 +273,37 @@ export default function Home() {
           <span className="sectionKicker">FAQ</span>
           <h2>Quick Answers</h2>
           <details>
-            <summary>Who won World Cup 2026 Group D?</summary>
-            <p>The United States finished first in Group D with six points.</p>
-          </details>
-          <details>
-            <summary>Why is Australia second above Paraguay?</summary>
-            <p>Australia and Paraguay both had four points, but Australia finished with a better overall goal difference.</p>
-          </details>
-          <details>
-            <summary>Is this a World Cup bracket or a group table?</summary>
+            <summary>Is there a hurricane threat for July 4th?</summary>
             <p>
-              This page focuses on the Group D table. The result feeds into the knockout bracket once the round of 32
-              matchups are confirmed.
+              As of June 26, 2026, the National Hurricane Center does not expect Atlantic tropical cyclone formation
+              during the next seven days. Keep checking because July 4 is close to the edge of that forecast window.
+            </p>
+          </details>
+          <details>
+            <summary>Could the Southeast still have stormy weather?</summary>
+            <p>
+              Yes. Scattered showers and thunderstorms are common in early July, especially during the afternoon and
+              evening near the coast.
+            </p>
+          </details>
+          <details>
+            <summary>What should beach visitors check first?</summary>
+            <p>
+              Check your local National Weather Service forecast, beach hazard statements, rip-current risk, marine
+              forecast, and any local event updates.
             </p>
           </details>
         </section>
 
         <section className="contentSection" id="sources">
           <span className="sectionKicker">External Links</span>
-          <h2>Sources and Further Reading</h2>
+          <h2>Official Sources and Further Reading</h2>
           <p className="trustNotice">
-            This independent standings article is for football reference only. It does not provide video broadcasts,
-            broadcast access, or ticketing services, and it is not affiliated with FIFA.
+            This independent weather article is for planning and reference only. Always follow National Weather Service,
+            National Hurricane Center, emergency-management, and local official guidance for safety decisions.
           </p>
           <div className="sourceList">
-            {sources.map((source) => (
+            {officialSources.map((source) => (
               <a href={source.href} target="_blank" rel="noreferrer" key={source.href}>
                 {source.label}
                 <ExternalLink size={16} />

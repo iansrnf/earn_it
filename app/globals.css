@@ -258,6 +258,10 @@ p {
   border-radius: 6px;
 }
 
+.winnerCard svg {
+  color: var(--blue);
+}
+
 .winnerCard span,
 .winnerCard small {
   color: var(--muted);
@@ -272,6 +276,22 @@ p {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-color: var(--blue) #edf1f6;
+}
+
+.weatherMap {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  align-items: center;
+  gap: 22px;
+  padding: 22px;
+}
+
+.weatherMap img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f6f8fb;
 }
 
 .standingsTable {
@@ -487,6 +507,7 @@ details p {
   }
 
   .leadPanel,
+  .weatherMap,
   .insightGrid,
   .resultList {
     grid-template-columns: 1fr;
