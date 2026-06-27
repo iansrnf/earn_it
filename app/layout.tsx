@@ -58,6 +58,7 @@ export const metadata: Metadata = {
   },
   other: {
     monetag: "49552a352ef9432b970e0059ce002458",
+    "msvalidate.01": "19A7ADF7A554814E7621DD4CB81D1014",
   },
 };
 
