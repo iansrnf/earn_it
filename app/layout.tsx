@@ -1,48 +1,48 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const heroImageUrl = "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=1600&q=80";
+const heroImageUrl = "https://commons.wikimedia.org/wiki/Special:Redirect/file/United%20Center%20060716.jpg?width=1600";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://iansr.online"),
   title: {
-    default: "July 4th Atlantic Weather Outlook: Tropics, Southeast Rain and Holiday Forecast",
-    template: "%s | July 4 Atlantic Weather",
+    default: "Trending News: Walmart Heir Lukas Walton, Chicago Bulls and United Center",
+    template: "%s | Trending News Desk",
   },
   description:
-    "Updated July 4th Atlantic weather outlook with the latest National Hurricane Center tropical update, Southeast rain risk, beach impacts, and official forecast links.",
+    "Trending news explainers with source links, including Walmart heir Lukas Walton's Chicago Bulls and United Center minority investment plus July 4 Atlantic weather coverage.",
   alternates: {
     canonical: "/",
   },
-  applicationName: "July 4 Atlantic Weather Outlook",
-  authors: [{ name: "Atlantic Weather Desk" }],
-  category: "weather",
+  applicationName: "Trending News Desk",
+  authors: [{ name: "Trending News Desk" }],
+  category: "news",
   keywords: [
+    "walmart",
+    "lukas walton",
+    "walmart heir",
+    "chicago bulls",
+    "united center",
     "july 4th atlantic weather",
-    "july 4 atlantic weather",
-    "july 4 tropical weather outlook",
-    "atlantic weather july 4",
-    "southeast july 4 weather",
-    "atlantic hurricane outlook july 4",
   ],
   openGraph: {
-    title: "July 4th Atlantic Weather Outlook",
-    description: "Latest Atlantic tropics status, Southeast rain risk, and holiday beach-weather planning notes.",
-    type: "article",
+    title: "Trending News: Walmart Heir Lukas Walton and Chicago Bulls Investment",
+    description: "Source-linked headline list and explainers for rising Walmart and weather search topics.",
+    type: "website",
     locale: "en_US",
     images: [
       {
         url: heroImageUrl,
         width: 1600,
         height: 900,
-        alt: "Storm clouds over the ocean",
+        alt: "United Center exterior in Chicago",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "July 4th Atlantic Weather Outlook",
-    description: "Updated Atlantic tropical outlook, Southeast rain risk, and holiday forecast notes.",
+    title: "Trending News: Walmart Heir Lukas Walton and Chicago Bulls Investment",
+    description: "Source-linked headline list and explainers for rising search topics.",
     images: [heroImageUrl],
   },
   robots: {
@@ -76,6 +76,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://commons.wikimedia.org" />
         <link rel="preconnect" href="https://www.nhc.noaa.gov" />
         <link rel="preconnect" href="https://quge5.com" />
         <link rel="dns-prefetch" href="https://3nbf4.com" />
